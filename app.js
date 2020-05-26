@@ -28,7 +28,7 @@ window.addEventListener('resize', () => {
 
 // Add Russian Flag for language selection
 var russianFlagGeo = new THREE.PlaneGeometry(15,10);
-var russianFlagTex = new THREE.TextureLoader().load('resources/img/russian_flag.png')
+var russianFlagTex = new THREE.TextureLoader().load('russian_flag.png')
 var russianFlagMat = new THREE.MeshLambertMaterial({map: russianFlagTex});
 var russianFlag = new THREE.Mesh(russianFlagGeo, russianFlagMat);
 russianFlag.position.z = -30;
@@ -40,7 +40,7 @@ scene.add(russianFlag)
 
 // Add American Flag for language selection
 var americanFlagGeo = new THREE.PlaneGeometry(15,10);
-var americanFlagTex = new THREE.TextureLoader().load('resources/img/american_flag.png')
+var americanFlagTex = new THREE.TextureLoader().load('american_flag.png')
 var americanFlagMat = new THREE.MeshLambertMaterial({map: americanFlagTex});
 var americanFlag = new THREE.Mesh(americanFlagGeo, americanFlagMat);
 americanFlag.position.z = -30;
@@ -52,7 +52,7 @@ scene.add(americanFlag)
 
 // Add text for user to choose language
 var planeTextGeo = new THREE.PlaneGeometry(15,10);
-var planeTextTex = new THREE.TextureLoader().load('resources/img/text.png')
+var planeTextTex = new THREE.TextureLoader().load('text.png')
 var planeTextMat = new THREE.MeshLambertMaterial({map: planeTextTex});
 var planeText = new THREE.Mesh(planeTextGeo, planeTextMat);
 planeText.position.z = -30;
@@ -216,13 +216,13 @@ function onMouseDown(event){
     var intersectAmericanFlag = raycaster.intersectObject(americanFlag, true);
     for (var i = 0; i < intersectAmericanFlag.length; i++) {
         console.log(intersectAmericanFlag[i]);
-        window.location.href='resources/index.php?lang=en'
+        window.location.href='index.php?lang=en'
     }
 
     var intersectRussianFlag = raycaster.intersectObject(russianFlag, true);
     for (var i = 0; i < intersectRussianFlag.length; i++) {
         console.log(intersectRussianFlag[i]);
-        window.location.href='resources/index.php?lang=ru'
+        window.location.href='index.php?lang=ru'
     }
 
 }
@@ -235,12 +235,12 @@ function onTouchStart (event) {
     raycaster.setFromCamera(touchTest,camera);
     var intersectAmericanFlag = raycaster.intersectObject(americanFlag, true);
     for (var i = 0; i < intersectAmericanFlag.length; i++) {
-        window.location.href='resources/index.php?lang=en'
+        window.location.href='index.php?lang=en'
     }
 
     var intersectRussianFlag = raycaster.intersectObject(russianFlag, true);
     for (var i = 0; i < intersectRussianFlag.length; i++) {
-        window.location.href='resources/index.php?lang=ru'
+        window.location.href='index.php?lang=ru'
     }
 }
 
